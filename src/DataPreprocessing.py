@@ -12,7 +12,6 @@ def csv_combine(read_data):
         writer.writerow(row)
 
 #list of datasets available
-
 data_sets = ['uber-raw-data-apr14_mod.csv', 'uber-raw-data-may14_mod.csv', 'uber-raw-data-jun14_mod.csv',
              'uber-raw-data-jul14_mod.csv', 'uber-raw-data-aug14_mod.csv', 'uber-raw-data-sep14_mod.csv']
 
