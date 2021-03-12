@@ -461,34 +461,3 @@ plt.xlabel('Day of the Week')
 plt.ylabel('Pickups')
 plt.title('Number of Pickups Grouped by Month',fontsize=14)
 
-
-# In[78]:
-
-
-#dataframe['day_of_week'].value_counts().plot(marker='o')
-#df.groupby('day_of_week', sort="False").size().plot(marker='o')
-days = {0:'Mon',1:'Tues',2:'Weds',3:'Thurs',4:'Fri',5:'Sat',6:'Sun'}
-i = df['Date'].dt.dayofweek.values.argsort()
-df = df.iloc[i]
-df['day_of_week'] = df['day_of_week'].map(days)
-grouped_day_of_week = df.groupby('day_of_week', sort=False) 
-grouped_day_of_week.plot(marker='o')
-
-plt.xlabel('Day of the week')
-plt.ylabel('Number of Pickups')
-plt.title('Pickups by Day of the Week')
-
-
-# In[85]:
-
-
-df['day_of_week'] = pd.Categorical(df['day_of_week'], categories=
-    ['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday', 'Sunday'],
-    ordered=True)
-pickups_by_day = df['day_of_week'].value_counts()
-print(pickups_by_day)
-plt.xlabel('Day of the week')
-plt.ylabel('Number of Pickups')
-plt.title('Pickups by Day of the Week')
-pickups_by_day.plot(marker='o', kind='line')
-
